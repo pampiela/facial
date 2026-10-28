@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceID - Reconocimiento Facial</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-900">
+
+    
+    <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
+            
+            
+            <a href="#" class="flex items-center gap-2 sm:gap-3 group">
+                <img src="img/logo-faceid.svg" alt="FaceID Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" onerror="this.onerror=null; this.src='https://api.iconify.design/lucide:scan-face.svg?color=%2300bfff';">
+                <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white group-hover:text-cyan-400 transition-colors">FaceID</span>
+            </a>
+
+            
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-300">
+                <a href="#inicio" class="hover:text-cyan-400 transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-cyan-400 transition-colors">Servicios</a>
+                <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
+                <a href="#login" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 lg:px-5 lg:py-2.5 rounded-xl transition-all shadow-lg shadow-blue-600/30 hover:scale-[1.02] active:scale-[0.98]">
+                    Iniciar Sesión
+                </a>
+            </nav>
+
+            
+            <button id="btn-menu" aria-label="Abrir menú" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none rounded-lg bg-slate-800/80 border border-slate-700 active:bg-slate-700">
+                <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 backdrop-blur-lg px-4 sm:px-6 py-4 space-y-3 transition-all">
+            <a href="#inicio" class="mobile-link block text-slate-300 hover:text-cyan-400 font-medium py-2 border-b border-slate-800/50">Inicio</a>
+            <a href="#servicios" class="mobile-link block text-slate-300 hover:text-cyan-400 font-medium py-2 border-b border-slate-800/50">Servicios</a>
+            <a href="#contacto" class="mobile-link block text-slate-300 hover:text-cyan-400 font-medium py-2 border-b border-slate-800/50">Contacto</a>
+            <a href="#login" class="block text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all shadow-md mt-2">
+                Iniciar Sesión
+            </a>
+        </div>
+    </header>
+
+    
+    <main class="flex-grow">
+        
+        
+        <section id="inicio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center bg-slate-800/40 border border-slate-800/80 p-5 sm:p-8 lg:p-12 rounded-3xl shadow-2xl backdrop-blur-sm">
+                
+                
+                <div class="space-y-4 sm:space-y-6 text-center md:text-left">
+                    <span class="inline-block px-3.5 py-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold rounded-full uppercase tracking-wider">
+                        Seguridad de Próxima Generación
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
+                        Reconocimiento Facial
+                    </h1>
+                    <p class="text-slate-400 text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed mx-auto md:mx-0">
+                        Tecnología que identifica rostros de forma rápida, segura y precisa mediante redes neuronales de alta velocidad.
+                    </p>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                        <a href="#servicios" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/30 hover:scale-[1.02] active:scale-[0.98]">
+                            Conoce más
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="relative w-full rounded-2xl overflow-hidden border border-slate-700/60 shadow-2xl group">
+                    <img src="img/rostro-reconocimiento.jpg" alt="Reconocimiento Facial" class="w-full h-64 sm:h-80 lg:h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3 bg-slate-900/80 backdrop-blur-md rounded-xl border border-slate-700/50 text-xs sm:text-sm text-cyan-300 flex items-center justify-between">
+                        <span class="font-medium">Escaneo Biométrico</span>
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Activo
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        
+        <section id="servicios" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Nuestros Servicios</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Soluciones avanzadas de identificación e inteligencia biométrica.</p>
+            </div>
+
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                
+                <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-cyan-500/5 group">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center mb-5 border border-blue-500/30 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Detección Facial</h3>
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            Identifica rostros en tiempo real con alta precisión, optimizado para diversos entornos de iluminación y ángulos.
+                        </p>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 gap-1.5 group-hover:translate-x-1 transition-all">
+                        Ver más 
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+                
+                <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-cyan-500/5 group">
+                    <div>
+                        <div class="w-12 h-12 bg-cyan-600/20 text-cyan-400 rounded-xl flex items-center justify-center mb-5 border border-cyan-500/30 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Seguridad Inteligente</h3>
+                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            Protege tu información con tecnología avanzada de autenticación y control de acceso seguro descentralizado.
+                        </p>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 gap-1.5 group-hover:translate-x-1 transition-all">
+                        Ver más 
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    
+    <footer id="contacto" class="bg-slate-950 border-t border-slate-800/80 mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-slate-400 text-sm">
+            
+            <div class="flex items-center gap-2">
+                <img src="img/logo-faceid.svg" alt="FaceID Logo" class="w-6 h-6" onerror="this.onerror=null; this.src='https://api.iconify.design/lucide:scan-face.svg?color=%2300bfff';">
+                <span class="font-bold text-white">FaceID</span>
+            </div>
+
+            <nav class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm">
+                <a href="#inicio" class="hover:text-cyan-400 transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-cyan-400 transition-colors">Servicios</a>
+                <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
+            </nav>
+
+            <div class="text-center sm:text-right text-xs text-slate-500">
+                <p>&copy; 2026 FaceID. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        }
+
+        btnMenu.addEventListener('click', toggleMenu);
+
+        // Cierra el menú al hacer clic en un enlace del móvil
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Oculta automáticamente el menú móvil si se redimensiona a pantalla de escritorio
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
